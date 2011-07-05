@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/bash
+
+function highlight {
+  test `which pygmentize`
+  if [[ $? -eq 0 ]]; then
+    pygmentize -Onoclasses,nobackground=True,linenos=1 -l js -f html
+  else
+    pre
+  fi
+}
+
+${TM_JS2COFFEE:=js2coffee} | highlight</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@d</string>
+	<key>name</key>
+	<string>Display Coffeescript from JS</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>uuid</key>
+	<string>A6B31516-BA87-4EB2-95CE-90F4F9C650CD</string>
+</dict>
+</plist>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/bin/bash
+
+${TM_JS2COFFEE:=js2coffee} $TM_FILEPATH &gt; $TM_FILEPATH.coffee
+
+echo "NEW FILE $TM_FILEPATH.coffee"</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>@m</string>
+	<key>name</key>
+	<string>New file</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>uuid</key>
+	<string>EEC31420-0D87-4958-B499-B18EC94D3363</string>
+</dict>
+</plist>
